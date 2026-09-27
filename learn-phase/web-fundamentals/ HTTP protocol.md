@@ -1,13 +1,22 @@
-HTTP: Hyper Text Transfer Protocol
+# مقدمة
+> HTTP: Hyper Text Transfer Protocol
+
+
 ال HTTP protocol، هو ال protocol المسئول عن الاتصال بين السيرفر والعميل. 
+
 يعمل HTTP protocol على port 80.
+
 آلية العمل: يعمل HTTP protocol عن طريق request من متصفح العميل الى ال web server، ثم يستقبل العميل HTTP response من الserver يحتوي على معلومات حول ال request الذي ارسله.
-القصور في HTTP وظهور HTTPS:
-عن ارسال HTTP Request الى الserver فانه يرسل محتويات ال Request and Response في صورة plain test بدون أي تشفير، مما يسمح لأي شخص داخل الشبكة برؤية محتوى HTTP Request. مما يعد خطيرا في حالة ارسال credentials او معلومات مالية أو معلومات حساسة الى ال web server او استقبالها مما يعرف باسم Man In The Middle attack لذا ظهر HTTP Secure والذي يرسل ال HTTP request and response في صورة مشفرة.
+
+# القصور في HTTP وظهور HTTPS
+عند ارسال HTTP Request الى الserver فانه يرسل محتويات ال Request and Response في صورة plain test بدون أي تشفير، مما يسمح لأي شخص داخل الشبكة برؤية محتوى HTTP Request. مما يعد خطيرا في حالة ارسال credentials او معلومات مالية أو معلومات حساسة الى ال web server او استقبالها مما يعرف باسم Man In The Middle attack لذا ظهر HTTP Secure والذي يرسل ال HTTP request and response في صورة مشفرة
+.
 يعمل HTTPS protocol على port 443.
 
+
 # HTTP request and response
-شكل ال HTTP Request
+## HTTP Request
+
 ```HTTP
 GET / HTTP/1.1
 Host: evil.com
@@ -40,7 +49,7 @@ Connection: keep-alive
 
 ال request body هو الجزء الذي يحتوي على البيانات المرسلة الى ال web server سواء كان ال request POST او PUT أو DELETE، فقد يرسل فيه ال credentials، او بيانات شخصية، او ملف صور أو txt عن طريق HTML form، قد يرسل ال request body في صورة JSON، او key=value، كما في ال REST APIs او ك Graph endpoint كما في ال Graph APIs.
 
-شكل ال HTTP Response:
+## HTTP Response
 ```HTTP
 HTTP/2 200 OK
 Server: openresty/1.31.1.1
